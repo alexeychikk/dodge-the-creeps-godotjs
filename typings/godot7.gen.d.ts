@@ -3796,12 +3796,6 @@ declare module "godot" {
         get igd_status(): int64
         set igd_status(value: int64)
     }
-    class UPNPDeviceMiniUPNP extends UPNPDevice {
-        constructor(identifier?: any)
-    }
-    class UPNPMiniUPNP extends UPNP {
-        constructor(identifier?: any)
-    }
     namespace UndoRedo {
         enum MergeMode {
             /** Makes "do"/"undo" operations stay in separate actions. */

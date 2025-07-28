@@ -5276,9 +5276,6 @@ declare module "godot" {
         update_graph(): void
         _update_filters(_unnamed_arg0: AnimationNode): boolean
     }
-    class AnimationNodeEndState extends AnimationRootNode {
-        constructor(identifier?: any)
-    }
     /** Base class for extending [AnimationRootNode]s from GDScript, C#, or C++.  
      *  	  
      *  @link https://docs.godotengine.org/en/4.4/classes/class_animationnodeextension.html  
@@ -5374,9 +5371,6 @@ declare module "godot" {
      *  @link https://docs.godotengine.org/en/4.4/classes/class_animationnodeoutput.html  
      */
     class AnimationNodeOutput extends AnimationNode {
-        constructor(identifier?: any)
-    }
-    class AnimationNodeStartState extends AnimationRootNode {
         constructor(identifier?: any)
     }
     namespace AnimationNodeStateMachine {
@@ -8292,6 +8286,9 @@ declare module "godot" {
     }
     /** @link https://docs.godotengine.org/en/4.4/classes/class_audiostreamplaybacksynchronized.html */
     class AudioStreamPlaybackSynchronized extends AudioStreamPlayback {
+        constructor(identifier?: any)
+    }
+    class AudioStreamPlaybackWAV extends AudioStreamPlayback {
         constructor(identifier?: any)
     }
     namespace AudioStreamPlayer {

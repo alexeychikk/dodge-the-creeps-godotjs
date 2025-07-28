@@ -8464,11 +8464,6 @@ declare module "godot" {
         /** Signal emitted when the user presses the delete binding modifier button for this modifier. */
         readonly binding_modifier_removed: Signal1<Object>
     }
-    class OpenXRBindingModifiersDialog<Map extends Record<string, Node> = Record<string, Node>> extends AcceptDialog<Map> {
-        constructor(identifier?: any)
-        _do_add_binding_modifier_editor(binding_modifier_editor: OpenXRBindingModifierEditor): void
-        _do_remove_binding_modifier_editor(binding_modifier_editor: OpenXRBindingModifierEditor): void
-    }
     /** The parent class of all OpenXR composition layer nodes.  
      *  	  
      *  @link https://docs.godotengine.org/en/4.4/classes/class_openxrcompositionlayer.html  
