@@ -1,4 +1,5 @@
 import {
+	AudioStreamPlayer2D,
 	Marker2D,
 	Node,
 	PackedScene,
@@ -12,6 +13,7 @@ import {
 import { export_var, onready } from "godot.annotations";
 import Player from "./Player";
 import Mob from "./Mob";
+import Hud from "./Hud";
 
 export default class Main extends Node {
 	@export_var(Variant.Type.TYPE_OBJECT, { class_: PackedScene })
@@ -35,11 +37,16 @@ export default class Main extends Node {
 	@onready("MobPath/MobSpawnLocation")
 	mobSpawnLocation!: PathFollow2D;
 
-	private score = 0;
+	@onready("Hud")
+	hud!: Hud;
 
-	_ready(): void {
-		this.newGame();
-	}
+	@onready("Music")
+	music!: AudioStreamPlayer2D;
+
+	@onready("DeathSound")
+	deathSound!: AudioStreamPlayer2D;
+
+	private score = 0;
 
 	_process(delta: number): void {}
 
@@ -47,11 +54,18 @@ export default class Main extends Node {
 		this.score = 0;
 		this.player.start(this.startPosition.position);
 		this.startTimer.start();
+		this.hud.updateScore(this.score);
+		this.hud.showMessage("Get Ready!");
+		this.get_tree().call_group("mobs", "queue_free");
+		this.music.play();
 	}
 
 	gameOver() {
 		this.mobTimer.stop();
 		this.scoreTimer.stop();
+		this.hud.showGameOver();
+		this.music.stop();
+		this.deathSound.play();
 	}
 
 	onStartTimerTimeout() {
@@ -77,5 +91,6 @@ export default class Main extends Node {
 
 	onScoreTimerTimeout() {
 		this.score += 1;
+		this.hud.updateScore(this.score);
 	}
 }

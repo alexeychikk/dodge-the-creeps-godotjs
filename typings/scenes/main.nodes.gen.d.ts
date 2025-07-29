@@ -1,6 +1,7 @@
 declare module "godot" {
     interface SceneNodes {
         "scenes/main.tscn": {
+            ColorRect: ColorRect<{}>,
             Player: Area2D<
                 {
                     AnimatedSprite2D: AnimatedSprite2D<{}>,
@@ -16,6 +17,16 @@ declare module "godot" {
                     MobSpawnLocation: PathFollow2D<{}>,
                 }
             >,
+            Hud: CanvasLayer<
+                {
+                    ScoreLabel: Label<{}>,
+                    Message: Label<{}>,
+                    StartButton: Button<{}>,
+                    MessageTimer: Timer<{}>,
+                }
+            >,
+            Music: AudioStreamPlayer2D<{}>,
+            DeathSound: AudioStreamPlayer2D<{}>,
         },
     }
 }
