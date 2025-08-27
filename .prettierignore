@@ -1,0 +1,13 @@
+# Add files here to ignore them from prettier formatting
+
+.godot
+/art
+/dist
+/fonts
+/gen
+/generated
+/scenes
+/typings
+package.json
+package-lock.json
+node_modules

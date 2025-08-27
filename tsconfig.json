@@ -1,23 +1,23 @@
 {
-	"compilerOptions": {
-		"incremental": true,
-		"tsBuildInfoFile": ".godot/.tsbuildinfo",
-		"target": "es2016",
-		"experimentalDecorators": true,
-		"module": "CommonJS",
-		"rootDir": "./",
-		"typeRoots": ["./node_modules/@types", "./typings"],
-		"types": ["node"],
-		"sourceMap": true,
-		"outDir": ".godot/GodotJS",
-		"sourceRoot": "../../../",
-		"newLine": "crlf",
-		"noEmitOnError": false,
-		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
-		"strict": true,
-		"skipLibCheck": true
-	},
-	"include": ["**/*.ts"],
-	"exclude": ["node_modules", ".godot"]
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": ".godot/.tsbuildinfo",
+    "target": "es2016",
+    "experimentalDecorators": true,
+    "module": "CommonJS",
+    "rootDir": "./",
+    "typeRoots": ["./node_modules/@types", "./typings"],
+    "types": ["node"],
+    "sourceMap": true,
+    "outDir": ".godot/GodotJS",
+    "sourceRoot": "../../../",
+    "newLine": "crlf",
+    "noEmitOnError": false,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", ".godot", "eslint.config.mjs"]
 }
